@@ -11,3 +11,18 @@
 9. Terminal: `git branch -M main`
 10. Terminal: `git remote add origin https://github.com/VMO2020/can-of-books-backend.git`
 11. Terminal: `git push -u origin main`
+12. package.json: `"start": "nodemon server.js"`
+
+## RUN
+
+Terminal: `npm start`
+
+## ADD book
+
+Terminal: `node seed.js`
+
+## MongoDB
+
+Mongodb => Database => Connect => Get URL to connect
+
+MongoCompass => Connect
