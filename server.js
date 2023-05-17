@@ -24,6 +24,12 @@ app.get('/books', async (request, response) => {
 	response.json(books);
 });
 
+// http://localhost:3001/book?_id=64625541980584ba2dd337ee
+app.get('/book', async (request, response) => {
+	const books = await Book.find(request.query);
+	response.json(books);
+});
+
 // POST-Create
 app.post('/book', async (request, response) => {
 	const book = request.body;
@@ -43,9 +49,17 @@ app.delete('/book/:id', async (request, response) => {
 			success: false,
 			error: `No book with id: ${id}`,
 		});
-	// Delete Quote
+	// Delete Book
 	await Book.findByIdAndDelete(id);
 	response.json({ success: true, id });
+});
+
+// PUT - Update
+app.put('/book/:id', async (request, response) => {
+	const book = request.body;
+	const id = request.params.id;
+	const updatedBook = await Book.findByIdAndUpdate(id, book);
+	response.json({ success: true, id, book });
 });
 
 mongoose
