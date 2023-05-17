@@ -12,6 +12,11 @@
 10. Terminal: `git remote add origin https://github.com/VMO2020/can-of-books-backend.git`
 11. Terminal: `git push -u origin main`
 12. package.json: `"start": "nodemon server.js"`
+13. Terminal: `npm i body-parser`
+
+ADD:
+`const bp = require('body-parser');`
+`app.use(bp.json());`
 
 ## RUN
 
