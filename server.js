@@ -24,6 +24,7 @@ app.get('/books', async (request, response) => {
 	response.json(books);
 });
 
+// GET-Read (book)
 // http://localhost:3001/book?_id=64625541980584ba2dd337ee
 app.get('/book', async (request, response) => {
 	const books = await Book.find(request.query);
@@ -56,10 +57,10 @@ app.delete('/book/:id', async (request, response) => {
 
 // PUT - Update
 app.put('/book/:id', async (request, response) => {
-	const book = request.body;
 	const id = request.params.id;
+	const book = request.body;
 	const updatedBook = await Book.findByIdAndUpdate(id, book);
-	response.json({ success: true, id, book });
+	response.json({ success: true, id, updatedBook });
 });
 
 mongoose
